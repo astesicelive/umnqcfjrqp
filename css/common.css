@@ -477,7 +477,7 @@ body.night .characters:hover, body.night .item img:hover {
   display: inline-block;
 }
 
-#selectStory, ul a {
+#selectStory, ul a, .lightswitch {
   cursor: pointer;
 }
 

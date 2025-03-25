@@ -1,6 +1,6 @@
-mdmjiqntyz: Credit/Disclaimer
-qrfrqbazdu: Supplemental Directories
-yqbawklsln: ES1 (Event/Scout)
-zauibutqvo: ES2 (Event/Scout)
-zyrejpmdyx: Idol Stories
+mdmjiqntyz: Credit/Disclaimer<br>
+qrfrqbazdu: Supplemental Directories<br>
+yqbawklsln: ES1 (Event/Scout)<br>
+zauibutqvo: ES2 (Event/Scout)<br>
+zyrejpmdyx: Idol Stories<br>
 twocfgmbty: Other Stories

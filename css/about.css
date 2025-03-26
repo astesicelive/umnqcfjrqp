@@ -1,0 +1,53 @@
+.about {
+  line-height: 1.5;
+  padding: 0;
+}
+.about .links {
+  display: inline-flex;
+  margin-left: 1.5vw;
+  margin-top: 0.5em;
+}
+.about .links a {
+  margin: 0.5em;
+}
+.about .desc, .about .nav {
+  padding: 1em 3em;
+  margin: 3em 10vw 4em;
+  background: var(--box);
+  border-radius: 8px;
+}
+.about.night .desc, .about.night .nav {
+  background: var(--drk-box);
+}
+.about .desc b {
+  color: var(--accent);
+}
+.about.night .desc b {
+  color: var(--drk-accent);
+}
+.about .nav a {
+  display: block;
+  text-align: center;
+  background: var(--accent);
+  color: #fff;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+}
+.about.night .nav a {
+  background: var(--drk-bg);
+  color: var(--drk-font);
+  border-color: var(--drk-borders);
+}
+.about .nav a:hover {
+  background: var(--table);
+  color: var(--accent);
+  border-color: 1px solid var(--accent);
+  font-weight: bold;
+}
+.about.night .nav a:hover {
+  color: var(--font);
+  background: var(--drk-accent);
+  border-color: var(--drk-accent);
+}

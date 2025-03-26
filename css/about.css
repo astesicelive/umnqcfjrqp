@@ -22,14 +22,8 @@
   background: var(--box);
   border-radius: 8px;
 }
-.about.night .desc, .about.night .nav {
-  background: var(--drk-box);
-}
 .about .desc b {
   color: var(--accent);
-}
-.about.night .desc b {
-  color: var(--drk-accent);
 }
 .about .nav a {
   display: block;
@@ -41,22 +35,63 @@
   border: 1px solid var(--accent);
   border-radius: 8px;
 }
-.about.night .nav a {
+.about .story a {
+  padding: 4px 8px;
+  margin: 0 4px;
+  text-align: center;
+  background: var(--accent);
+  color: #fff;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+}
+.about ul {
+  padding-left: 20px;
+}
+.about .story {
+  padding-bottom: 2em;
+}
+.about .story h2 {
+  text-align: center;
+  margin-bottom: 4px;
+}
+.about .story span {
+  text-align: right;
+  display: block;
+  font-style: italic;
+}
+.about .story span:before {
+  content: 'translation by ';
+}
+.about .story p {
+  border-bottom: 3px dotted var(--font);
+  padding: 2px;
+  font-weight: bold;
+}
+.about .story div {
+  margin: 0 8px;
+}
+.about.night .desc, .about.night .nav {
+  background: var(--drk-box);
+}
+.about.night .desc b {
+  color: var(--drk-accent);
+}
+.about.night .nav a, .about .story a {
   background: var(--drk-bg);
   color: var(--drk-font);
   border-color: var(--drk-borders);
 }
-.about .nav a:hover {
+.about.night .story p {
+  border-bottom-color: var(--drk-font);
+}
+.about .nav a:hover, .about .story a:hover {
   background: var(--table);
   color: var(--accent);
   border-color: 1px solid var(--accent);
   font-weight: bold;
 }
-.about.night .nav a:hover {
+.about.night .nav a:hover, .about .story a:hover {
   color: var(--font);
   background: var(--drk-accent);
   border-color: var(--drk-accent);
-}
-.about ul {
-  padding-left: 20px;
 }

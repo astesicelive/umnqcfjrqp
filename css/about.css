@@ -57,3 +57,6 @@
   background: var(--drk-accent);
   border-color: var(--drk-accent);
 }
+.about ul {
+  padding-left: 20px;
+}

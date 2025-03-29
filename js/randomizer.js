@@ -20,8 +20,9 @@ function randomChar() {
 }
 
 function setChibiNuiFiles() {
-  $('.chibi').attr('src',randomChar()[0]);
-  $('.nui').attr('src',randomChar()[1]);
+  let char = randomChar();
+  $('.chibi').attr('src',char[0]);
+  $('.nui').attr('src',char[1]);
 }
 
 setChibiNuiFiles();

@@ -8,24 +8,20 @@ const chibiCollection = [
   ['subaru',15,4]
 ]
 
-function chibiRandom(folder) {
+function randomChar() {
   let 
     select = Math.floor(Math.random() * chibiCollection.length),
     char = chibiCollection[select][0],
-    number
+    chibi = Math.floor(Math.random() * chibiCollection[select][1]) + 1,
+    nui = Math.floor(Math.random() * chibiCollection[select][2]) + 1
   ;
-  if (folder == 'chibi') {
-    number = Math.floor(Math.random() * chibiCollection[select][1]) + 1
-  } else {
-    number = Math.floor(Math.random() * chibiCollection[select][2]) + 1
-  }
   console.log(char);
-  return 'img/ect/' + folder '/' + char + number + '.png';
+  return ['img/ect/chibi/' + char + chibi + '.png','img/ect/nui/' + char + nui + '.png'];
 }
 
 function setChibiNuiFiles() {
-  $('.chibi').attr('src',chibiRandom('chibi'));
-  $('.nui').attr('src',chibiRandom('nui'));
+  $('.chibi').attr('src',randomChar()[0]);
+  $('.nui').attr('src',randomChar()[1]);
 }
 
 setChibiNuiFiles();

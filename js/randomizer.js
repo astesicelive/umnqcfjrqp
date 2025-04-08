@@ -1,9 +1,10 @@
 const chibiCollection = [
   ['chiaki',15,5],
   ['hokuto',27,2],
+  ['mao',10,3],
   ['niki',15,4],
   ['raika',1,1],
-  ['ritsu',15,1],
+  ['ritsu',15,2],
   ['sora',15,2],
   ['subaru',15,4]
 ]

@@ -1,8 +1,11 @@
 var head = document.getElementsByTagName("head")[0];
 var link = document.createElement("link");
+var link2 = document.createElement("link");
 link.rel = "stylesheet";
+link2.rel = "stylesheet";
 link.type = "text/css";
+link2.type = "text/css";
 link.href = "https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css";
+link2.href = "https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css";
 head.appendChild(link);
-link.href = "https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css";
-head.appendChild(link);
+head.appendChild(link2);

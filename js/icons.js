@@ -90,7 +90,7 @@ function five__mtlClass() {
   $(".grid a").each(function () {
     try {
       let $link = $(this);
-      let content = $link.innerHTML;
+      let content = $link.html();
       if (/\(MTL\)/.test(content)) {
         $link.addClass("mtl");
       };

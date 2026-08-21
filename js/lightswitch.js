@@ -1,6 +1,6 @@
-// DARK MODE, HIDE MTLS
+// DARK MODE
 window.addEventListener("DOMContentLoaded", function() {
-    const light_btn = document.querySelector(".lightswitch");
+    const btn = document.querySelector(".lightswitch");
     $(".lightswitch i").attr("class","ph-moon-fill");
 
     const currentTheme = localStorage.getItem("theme");
@@ -10,9 +10,9 @@ window.addEventListener("DOMContentLoaded", function() {
         $(".lightswitch").attr("title","Light Mode");
     };
 
-    light_btn.addEventListener("click", function () {
+    btn.addEventListener("click", function () {
         document.body.classList.toggle("night");
-        let swi_obj = {
+        let obj = {
             'light': 'Dark Mode',
             'dark': 'Light Mode',
         };
@@ -24,10 +24,13 @@ window.addEventListener("DOMContentLoaded", function() {
             $(".lightswitch i").attr("class","ph-sun-fill");
         };
         localStorage.setItem("theme", theme);
-        $(".lightswitch").attr("title", swi_obj[theme]);
+        $(".lightswitch").attr("title", obj[theme]);
     });
+});
 
-    const mtl_btn = document.querySelector(".mtl_button");
+// HIDE MTLS
+window.addEventListener("DOMContentLoaded", function() {
+    const btn = document.querySelector(".mtl_button");
     $(".mtl_button i").attr("class","ph-prohibit");
     
     const currentMtlDisplay = localStorage.getItem("mtl_display");
@@ -39,23 +42,23 @@ window.addEventListener("DOMContentLoaded", function() {
         $(".mtl_button").attr("title","Show MTLs");
     };
 
-    mtl_btn.addEventListener("click", function () {
+    btn.addEventListener("click", function () {
         $(".mtl_button").toggleClass('mtl_disabled');
         $("a.mtl").each(function () {
             $(this).toggleClass("hide_mtl");
         });
 
-        let mtl_obj = {
+        let obj = {
             'show': 'Hide MTLs',
             'hide': 'Show MTLs',
         };
-        let displ = "show";
+        let mtl_display = "show";
         $(".mtl_button i").attr("class","ph-prohibit");
         if ($(".mtl_button").hasClass("mtl_disabled")) {
-            displ = "hide";
+            mtl_display = "hide";
             $(".mtl_button i").attr("class","ph-robot");
         };
-        localStorage.setItem("mtl_display", displ);
-        $(".mtl_button").attr("title", mtl_obj[displ]);
+        localStorage.setItem("mtl_display", mtl_display);
+        $(".mtl_button").attr("title", obj[mtl_display]);
     });
 });

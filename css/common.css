@@ -482,7 +482,7 @@ body.night .characters:hover, body.night .item img:hover {
 }
 
 .hide_mtl {
-  display: none;
+  display: none!important;
 }
 
 /* credit: DO NOT TOUCH */

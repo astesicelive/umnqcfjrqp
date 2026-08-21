@@ -37,10 +37,10 @@ window.addEventListener("DOMContentLoaded", function() {
     if (currentMtlDisplay == "hide") {
         $("a.mtl").each(function () {
             $(this).addClass("hide_mtl");
-            $(this).addClass("mtl_disabled");
         });
         $(".mtl_button i").attr("class","ph-robot");
         $(".mtl_button").attr("title","Show MTLs");
+        $(".mtl_button").addClass("mtl_disabled");
     };
 
     btn.addEventListener("click", function () {

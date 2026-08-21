@@ -12,15 +12,19 @@ window.addEventListener("DOMContentLoaded", function() {
 
     light_btn.addEventListener("click", function () {
         document.body.classList.toggle("night");
+        let swi_obj = {
+            'light': 'Dark Mode',
+            'dark': 'Light Mode',
+        };
 
-        let theme = "Light";
+        let theme = "light";
         $(".lightswitch i").attr("class","ph-moon-fill");
         if (document.body.classList.contains("night")) {
-            theme = "Dark";
+            theme = "dark";
             $(".lightswitch i").attr("class","ph-sun-fill");
         };
-        localStorage.setItem("theme", theme.toLowerCase());
-        $(".lightswitch").attr("title", theme + " Mode");
+        localStorage.setItem("theme", theme);
+        $(".lightswitch").attr("title", swi_obj[theme]);
     });
 
     const mtl_btn = document.querySelector(".mtl_button");
@@ -41,13 +45,17 @@ window.addEventListener("DOMContentLoaded", function() {
             $(this).toggleClass("hide_mtl");
         });
 
-        let displ = "Show";
+        let mtl_obj = {
+            'show': 'Hide MTLs',
+            'hide': 'Show MTLs',
+        };
+        let displ = "show";
         $(".mtl_button i").attr("class","ph-prohibit");
         if ($(".mtl_button").hasClass("mtl_disabled")) {
-            theme = "Hide";
+            theme = "hide";
             $(".mtl_button i").attr("class","ph-robot");
         };
-        localStorage.setItem("mtl_display", displ.toLowerCase());
-        $(".mtl_button").attr("title", displ + " MTLs");
+        localStorage.setItem("mtl_display", displ);
+        $(".mtl_button").attr("title", mtl_obj[displ]);
     });
 });

@@ -2,14 +2,14 @@ const randomTitle = `<div><h2 class="rando">Random Story</h2></div>`;
 const storyArray = document.querySelectorAll('.item');
  
 const selectStory = () => {
-    var $ransto = $('.random');
-    $('.grid').isotope( 'remove', $ransto );
-    let random = Math.floor(Math.random() * storyArray.length);
-    var $pickedStory = $('<div class="random item">' + randomTitle + storyArray[random].innerHTML + '</div>');
-    $('.grid').prepend($pickedStory).isotope('prepended', $pickedStory);
- }
+  var $ransto = $('.random');
+  $('.grid').isotope( 'remove', $ransto );
+  let random = Math.floor(Math.random() * storyArray.length);
+  var $pickedStory = $('<div class="random item">' + randomTitle + storyArray[random].innerHTML + '</div>');
+  $('.grid').prepend($pickedStory).isotope('prepended', $pickedStory);
+}
  
- function cs__translatedStatus() {
+function cs__translatedStatus() {
   // utility function that just sets the classes for us
   function setClassesTranslated($item, state) {
     if (state) {

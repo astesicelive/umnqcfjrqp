@@ -52,7 +52,7 @@ window.addEventListener("DOMContentLoaded", function() {
         let displ = "show";
         $(".mtl_button i").attr("class","ph-prohibit");
         if ($(".mtl_button").hasClass("mtl_disabled")) {
-            theme = "hide";
+            displ = "hide";
             $(".mtl_button i").attr("class","ph-robot");
         };
         localStorage.setItem("mtl_display", displ);

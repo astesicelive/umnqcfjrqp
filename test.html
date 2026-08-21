@@ -1,0 +1,457 @@
+<!--
+  3 am © xroub.tumblr.com
+  
+  credits:
+  isotope combination filtering tutorial by magnusthemes.tumblr.com
+  https://phosphoricons.com/
+  masterlist code by paradisecorrupt
+  
+  changelog august 19th: updated until ritsu's fs3
+  
+  -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&amp;display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/common.css" />
+    <!--<link type="text/css" rel="stylesheet" href="css/hide.css" />-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
+    <script src="https://unpkg.com/phosphor-icons"></script>
+    <script src="js/isotope%20filter.js"></script>
+    <script src="js/lightswitch.js"></script>
+    
+    <title>test page</title>
+    <p class="filters">Updated: August 19th, 2026</p>
+    
+    <style>
+      
+      /* CHANGE THE COLORS HERE */
+      :root {
+      --bg: #f0f0f0;
+      --font: #222222;
+      --header: #ffffff;
+      --box: #ffffff;
+      --borders: #cceef4;
+      --accent: #A1D8E2;
+      --table: #e7f6f9;
+      /* dark mode colors */
+      --drk-bg: #35373a;
+      --drk-font: #f0f0f0;
+      --drk-accent: #ffd5df;
+      --drk-header: #44474a;
+      --drk-box: #44474a;
+      --drk-borders: #313235;
+      }
+      
+      body {
+      padding-bottom: 25px;
+      }
+      
+      /* DARK MODE STYLING */
+      body.night .item {scrollbar-color: var(--drk-accent) var(--drk-box);}
+      header {
+      line-height: 120%;
+      }
+      
+      .chibi {
+      left: 20%;
+      top: -145px;
+      }
+      
+      p.filters {
+      left: 45%;
+      top: 20px;
+      position : relative;
+      max-width: fit-content;
+      font-weight: bold;
+      }
+      
+      /* content */
+      .grid .item {
+      height: 350px;
+      overflow: auto;
+      scrollbar-width: thin;
+      scrollbar-color: var(--borders) white; 
+      }
+      
+      /* Hide scrollbar for Chrome, Safari and Opera */
+      .item::-webkit-scrollbar {
+      display: none;
+      }
+      
+      /* Hide scrollbar for IE, Edge and Firefox */
+      .item {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+      }
+      
+      .round {
+      width: 98%;
+      aspect-ratio: 16 / 6.55;
+      margin-top: 2px;
+      margin-bottom: 7px;
+      }
+      
+      h3 span {
+      overflow-wrap: anywhere;
+      }
+      
+      .chlist p {
+      margin-bottom: 0.1em;
+      }
+      
+      /* CHIBI HEADS LIST */
+      .eichi {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/tenshouin_eichi1.png);
+      }
+      .wataru {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/hibiki_wataru1.png);
+      }
+      .tori {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/himemiya_tori1.png);
+      }
+      .yuzuru {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/fushimi_yuzuru1.png);
+      }
+      .hokuto {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/hidaka_hokuto1.png);
+      }
+      .subaru {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/akehoshi_subaru1.png);
+      }
+      .makoto {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/yuuki_makoto1.png);
+      }
+      .mao {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/isara_mao1.png);
+      }
+      .tetora {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/nagumo_tetora2.png);
+      }
+      .midori {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/takamine_midori1.png);
+      }
+      .shinobu {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/sengoku_shinobu1.png);
+      }
+      .chiaki {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/morisawa_chiaki1.png);
+      }
+      .kanata {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/shinkai_kanata1.png);
+      }
+      .hiiro {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/amagi_hiiro1.png);
+      }
+      .aira {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/shiratori_aira1.png);
+      }
+      .mayoi {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/ayase_mayoi1.png);
+      }
+      .tatsumi {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/kazehaya_tatsumi1.png);
+      }
+      .nagisa {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/ran_nagisa1.png);
+      }
+      .hiyori {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/tomoe_hiyori1.png);
+      }
+      .ibara {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/saegusa_ibara1.png);
+      }
+      .jun {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/sazanami_jun1.png);
+      }
+      .shu {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/itsuki_shu1.png);
+      }
+      .mika {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/kagehira_mika1.png);
+      }
+      .hinata {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/aoi_hinata1.png);
+      }
+      .yuuta {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/aoi_yuuta2.png);
+      }
+      .rinne {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/amagi_rinne1.png);
+      }
+      .himeru {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/himeru1.png);
+      }
+      .kohaku {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/oukawa_kohaku1.png);
+      }
+      .niki {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/shiina_niki1.png);
+      }
+      .rei {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/sakuma_rei1.png);
+      }
+      .kaoru {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/hakaze_kaoru1.png);
+      }
+      .koga {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/ogami_koga1.png);
+      }
+      .adonis {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/otogari_adonis1.png);
+      }
+      .tomoya {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/mashiro_tomoya1.png);
+      }
+      .nazuna {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/nito_nazuna1.png);
+      }
+      .mitsuru {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/tenma_mitsuru1.png);
+      }
+      .hajime {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/shino_hajime1.png);
+      }
+      .keito {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/hasumi_keito1.png);
+      }
+      .kuro {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/kiryu_kuro1.png);
+      }
+      .souma {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/kanzaki_souma1.png);
+      }
+      .tsukasa {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/suou_tsukasa1.png);
+      }
+      .leo {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/tsukinaga_leo1.png);
+      }
+      .izumi {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/sena_izumi1.png);
+      }
+      .ritsu {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/sakuma_ritsu1.png);
+      }
+      .arashi {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/narukami_arashi1.png);
+      }
+      .natsume {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/sakasaki_natsume1.png);
+      }
+      .tsumugi {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/aoba_tsumugi2.png);
+      }
+      .sora {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/harukawa_sora1.png);
+      }
+      .madara {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/mikejima_madara1.png);
+      }
+      .jin {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/sagami_jin1.png);
+      }
+      .akiomi {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/kunugi_akiomi1.png);
+      }
+      .seiya {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/hidaka_seiya1.png);
+      }
+      .gatekeeper {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/gatekeeper1.png);
+      }
+      .hitsugi {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/kurone1.png);
+      }
+      .esu {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/sagiri_esu1.png);
+      }
+      .ibuki {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/taki_ibuki1.png);
+      }
+      .kanna {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/natsu_kanna1.png);
+      }
+      .yume {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/hanamura_fuyume1.png);
+      }
+      .raika {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/houjou_raika1.png);
+      }
+      .juis {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/kojika_juis1.png);
+      }
+      .nozomi {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/madoka_nozomi1.png);
+      }
+      .mashu {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/kuon_mashu1.png);
+      }
+      .chitose {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/tsuzura_chitose1.png);
+      }
+      .nice {
+      --link: url(https://astesicelive.github.io/umnqcfjrqp/img/ect/chibi_heads/nice1.png);
+      }
+    
+      
+      @media only screen and (max-width: 600px) {
+      .grid .item {height: auto;}
+      }
+      
+    </style>
+    
+  </head>
+  <body>
+    <a href="https://enbythemes.tumblr.com" class="crd" title="code by rou">
+      <img class="nui" src="">
+    </a>
+    <header>
+      <img class="chibi" src="">
+      <div class="links">
+        <a href="mdmjiqntyz" title="About/Home"><i class="ph-house-fill"></i></a>
+        <a href="qrfrqbazdu" title="Supplemental Directory"><i class="ph-list"></i></a>
+        <a class="lightswitch" title="Light/Dark Mode"><i class="ph-moon-fill"></i></a>
+      </div>
+      
+      <!-- FILTERS -->
+      <div class="filters">
+        
+        <ul class="filter option-set exclusive" data-filter-group="gen">
+          <li class="filter option-set exclusive"><a data-filter-value="" class="reset selected">Reset</a></li>
+          <!-- IMPROTANT! make sure not to delete! -->
+          <a href="yqbawklsln">　! Era Stories <i class="ph-arrow-fat-right"></i></a>
+          <a href="zauibutqvo">　!! Era Stories <i class="ph-arrow-fat-right"></i></a>
+          <a href="twocfgmbty">　Other Stories <i class="ph-arrow-fat-right"></i></a>
+        </ul>
+        
+        <ul class="filter option-set exclusive" data-filter-group="type">
+          <li><b>Type:</b></li>
+          <li><a data-filter-value="" class="selected">All</a></li>
+          <li><a data-filter-value=".idol">Idol Story</a></li>
+          <li><a data-filter-value=".fs">Feature Scouts (All)</a></li>
+          <li><a data-filter-value=".fs1">FS1</a></li>
+          <li><a data-filter-value=".fs2">FS2</a></li>
+          <li><a data-filter-value=".fs3">Bright me up!!</a></li>
+          <li><a data-filter-value=".manage">Management Story</a></li>
+        </ul>
+        
+        <ul class="filter option-set exclusive" data-filter-group="era">
+          <li><b>Era:</b></li>
+          <li><a data-filter-value="" class="selected">All</a></li>
+          <li><a data-filter-value=".one">!</a></li>
+          <li><a data-filter-value=".two">!!</a></li>
+        </ul>
+        
+        <ul class="filter option-set exclusive" data-filter-group="unit">
+          <li><b>Unit:</b></li>
+          <li><a data-filter-value="" class="selected">All</a></li>
+          <li><a data-filter-value=".fine">fine</a></li>
+          <li><a data-filter-value=".trickstar">Trickstar</a></li>
+          <li><a data-filter-value=".ryuseitai">Ryuseitai</a></li>
+          <li><a data-filter-value=".alkaloid">ALKALOID</a></li>
+          <li><a data-filter-value=".eden">Eden</a></li>
+          <li><a data-filter-value=".valkyrie">Valkyrie</a></li>
+          <li><a data-filter-value=".2wink">2wink</a></li>
+          <li><a data-filter-value=".crazyb">Crazy:B</a></li>
+          <li><a data-filter-value=".undead">UNDEAD</a></li>
+          <li><a data-filter-value=".rabits">Ra*bits</a></li>
+          <li><a data-filter-value=".akatsuki">Akatsuki</a></li>
+          <li><a data-filter-value=".mdu">MELLOW DEAR US</a></li>
+          <li><a data-filter-value=".knights">Knights</a></li>
+          <li><a data-filter-value=".switch">Switch</a></li>
+          <li><a data-filter-value=".mam">MaM</a></li>
+          <li><a data-filter-value=".esupuri">Special for Princess!</a></li>
+          <li><a data-filter-value=".others">Others</a></li>
+        </ul>
+        
+        <ul class="filter option-set combine" data-filter-group="chara">
+          <p>
+          <li><b>Character:</b></li>
+          <li><a data-filter-value="" class="selected">All</a></li>
+          </p>
+          <li><a data-filter-value=".eichi"><img src="img/ect/chibi_heads/tenshouin_eichi1.png" width="30"/></a></li>
+          <li><a data-filter-value=".wataru"><img src="img/ect/chibi_heads/hibiki_wataru1.png" width="30"/></a></li>
+          <li><a data-filter-value=".tori"><img src="img/ect/chibi_heads/himemiya_tori1.png" width="30"/></a></li>
+          <li><a data-filter-value=".yuzuru"><img src="img/ect/chibi_heads/fushimi_yuzuru1.png" width="30"/></a></li>
+          <li><a data-filter-value=".hokuto"><img src="img/ect/chibi_heads/hidaka_hokuto1.png" width="30"/></a></li>
+          <li><a data-filter-value=".subaru"><img src="img/ect/chibi_heads/akehoshi_subaru1.png" width="30"/></a></li>
+          <li><a data-filter-value=".makoto"><img src="img/ect/chibi_heads/yuuki_makoto1.png" width="30"/></a></li>
+          <li><a data-filter-value=".mao"><img src="img/ect/chibi_heads/isara_mao1.png" width="30"/></a></li>
+          <li><a data-filter-value=".tetora"><img src="img/ect/chibi_heads/nagumo_tetora2.png" width="30"/></a></li>
+          <li><a data-filter-value=".midori"><img src="img/ect/chibi_heads/takamine_midori1.png" width="30"/></a></li>
+          <li><a data-filter-value=".shinobu"><img src="img/ect/chibi_heads/sengoku_shinobu1.png" width="30"/></a></li>
+          <li><a data-filter-value=".chiaki"><img src="img/ect/chibi_heads/morisawa_chiaki1.png" width="30"/></a></li>
+          <li><a data-filter-value=".kanata"><img src="img/ect/chibi_heads/shinkai_kanata1.png" width="30"/></a></li>
+          <li><a data-filter-value=".hiiro"><img src="img/ect/chibi_heads/amagi_hiiro1.png" width="30"/></a></li>
+          <li><a data-filter-value=".aira"><img src="img/ect/chibi_heads/shiratori_aira1.png" width="30"/></a></li>
+          <li><a data-filter-value=".mayoi"><img src="img/ect/chibi_heads/ayase_mayoi1.png" width="30"/></a></li>
+          <li><a data-filter-value=".tatsumi"><img src="img/ect/chibi_heads/kazehaya_tatsumi1.png" width="30"/></a></li>
+          <li><a data-filter-value=".nagisa"><img src="img/ect/chibi_heads/ran_nagisa1.png" width="30"/></a></li>
+          <li><a data-filter-value=".hiyori"><img src="img/ect/chibi_heads/tomoe_hiyori1.png" width="30"/></a></li>
+          <li><a data-filter-value=".ibara"><img src="img/ect/chibi_heads/saegusa_ibara1.png" width="30"/></a></li>
+          <li><a data-filter-value=".jun"><img src="img/ect/chibi_heads/sazanami_jun1.png" width="30"/></a></li>
+          <li><a data-filter-value=".shu"><img src="img/ect/chibi_heads/itsuki_shu1.png" width="30"/></a></li>
+          <li><a data-filter-value=".mika"><img src="img/ect/chibi_heads/kagehira_mika1.png" width="30"/></a></li>
+          <li><a data-filter-value=".hinata"><img src="img/ect/chibi_heads/aoi_hinata1.png" width="30"/></a></li>
+          <li><a data-filter-value=".yuuta"><img src="img/ect/chibi_heads/aoi_yuuta2.png" width="30"/></a></li>
+          <li><a data-filter-value=".rinne"><img src="img/ect/chibi_heads/amagi_rinne1.png" width="30"/></a></li>
+          <li><a data-filter-value=".himeru"><img src="img/ect/chibi_heads/himeru1.png" width="30"/></a></li>
+          <li><a data-filter-value=".kohaku"><img src="img/ect/chibi_heads/oukawa_kohaku1.png" width="30"/></a></li>
+          <li><a data-filter-value=".niki"><img src="img/ect/chibi_heads/shiina_niki1.png" width="30"/></a></li>
+          <li><a data-filter-value=".rei"><img src="img/ect/chibi_heads/sakuma_rei1.png" width="30"/></a></li>
+          <li><a data-filter-value=".kaoru"><img src="img/ect/chibi_heads/hakaze_kaoru1.png" width="30"/></a></li>
+          <li><a data-filter-value=".koga"><img src="img/ect/chibi_heads/ogami_koga1.png" width="30"/></a></li>
+          <li><a data-filter-value=".adonis"><img src="img/ect/chibi_heads/otogari_adonis1.png" width="30"/></a></li>
+          <li><a data-filter-value=".tomoya"><img src="img/ect/chibi_heads/mashiro_tomoya1.png" width="30"/></a></li>
+          <li><a data-filter-value=".nazuna"><img src="img/ect/chibi_heads/nito_nazuna1.png" width="30"/></a></li>
+          <li><a data-filter-value=".mitsuru"><img src="img/ect/chibi_heads/tenma_mitsuru1.png" width="30"/></a></li>
+          <li><a data-filter-value=".hajime"><img src="img/ect/chibi_heads/shino_hajime1.png" width="30"/></a></li>
+          <li><a data-filter-value=".keito"><img src="img/ect/chibi_heads/hasumi_keito1.png" width="30"/></a></li>
+          <li><a data-filter-value=".kuro"><img src="img/ect/chibi_heads/kiryu_kuro1.png" width="30"/></a></li>
+          <li><a data-filter-value=".souma"><img src="img/ect/chibi_heads/kanzaki_souma1.png" width="30"/></a></li>
+          <li><a data-filter-value=".ibuki"><img src="img/ect/chibi_heads/taki_ibuki1.png" width="30"/></a></li>
+          <li><a data-filter-value=".juis"><img src="img/ect/chibi_heads/kojika_juis1.png" width="30"/></a></li>
+          <li><a data-filter-value=".nozomi"><img src="img/ect/chibi_heads/madoka_nozomi1.png" width="30"/></a></li>
+          <li><a data-filter-value=".mashu"><img src="img/ect/chibi_heads/kuon_mashu1.png" width="30"/></a></li>
+          <li><a data-filter-value=".chitose"><img src="img/ect/chibi_heads/tsuzura_chitose1.png" width="30"/></a></li>
+          <li><a data-filter-value=".tsukasa"><img src="img/ect/chibi_heads/suou_tsukasa1.png" width="30"/></a></li>
+          <li><a data-filter-value=".leo"><img src="img/ect/chibi_heads/tsukinaga_leo1.png" width="30"/></a></li>
+          <li><a data-filter-value=".izumi"><img src="img/ect/chibi_heads/sena_izumi1.png" width="30"/></a></li>
+          <li><a data-filter-value=".ritsu"><img src="img/ect/chibi_heads/sakuma_ritsu1.png" width="30"/></a></li>
+          <li><a data-filter-value=".arashi"><img src="img/ect/chibi_heads/narukami_arashi1.png" width="30"/></a></li>
+          <li><a data-filter-value=".natsume"><img src="img/ect/chibi_heads/sakasaki_natsume1.png" width="30"/></a></li>
+          <li><a data-filter-value=".tsumugi"><img src="img/ect/chibi_heads/aoba_tsumugi2.png" width="30"/></a></li>
+          <li><a data-filter-value=".sora"><img src="img/ect/chibi_heads/harukawa_sora1.png" width="30"/></a></li>
+          <li><a data-filter-value=".madara"><img src="img/ect/chibi_heads/mikejima_madara1.png" width="30"/></a></li>
+          <li><a data-filter-value=".esu"><img src="img/ect/chibi_heads/sagiri_esu1.png" width="30"/></a></li>
+          <li><a data-filter-value=".kanna"><img src="img/ect/chibi_heads/natsu_kanna1.png" width="30"/></a></li>
+          <li><a data-filter-value=".yume"><img src="img/ect/chibi_heads/hanamura_fuyume1.png" width="30"/></a></li>
+          <li><a data-filter-value=".raika"><img src="img/ect/chibi_heads/houjou_raika1.png" width="30"/></a></li>
+          <li><a data-filter-value=".jin"><img src="img/ect/chibi_heads/sagami_jin1.png" width="30"/></a></li>
+          <li><a data-filter-value=".akiomi"><img src="img/ect/chibi_heads/kunugi_akiomi1.png" width="30"/></a></li>
+          <li><a data-filter-value=".nice"><img src="img/ect/chibi_heads/nice1.png" width="30"/></a></li>
+          <li><a data-filter-value=".seiya"><img src="img/ect/chibi_heads/hidaka_seiya1.png" width="30"/></a></li>
+        </ul>
+        
+      </div>
+    </header>
+    <!-- HEADER ENDS -->
+    <!-- GRID STARTS -->
+    <section class="grid">
+      
+      
+    </section>
+    
+    <!-- GRID ENDS -->
+    
+    <script src="js/icons.js"></script>
+    <script src="js/progress.js"></script>
+    <script src="js/randomizer.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/kamishirorui/cielscripts@master/dist/live.js"></script>
+  </body>
+</html>

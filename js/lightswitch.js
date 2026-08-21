@@ -36,7 +36,8 @@ window.addEventListener("DOMContentLoaded", function() {
     const currentMtlDisplay = localStorage.getItem("mtl_display");
     if (currentMtlDisplay == "hide") {
         $("a.mtl").each(function () {
-            $(this).addClass("hide_mtl mtl_disabled");
+            $(this).addClass("hide_mtl");
+            $(this).addClass("mtl_disabled");
         });
         $(".mtl_button i").attr("class","ph-robot");
         $(".mtl_button").attr("title","Show MTLs");

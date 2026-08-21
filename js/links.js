@@ -13,7 +13,7 @@ const five__navLinks = () => {
     'mtl_button': {
       icon: 'ph-prohibit',
       title: 'Show/Hide MTLs',
-      action: 'mtl',
+      action: 'mtl_button',
     },
     'lightswitch': {
       icon: 'ph-moon-fill',

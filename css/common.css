@@ -477,8 +477,12 @@ body.night .characters:hover, body.night .item img:hover {
   display: inline-block;
 }
 
-#selectStory, ul a, .lightswitch {
+#selectStory, ul a, .lightswitch, .mtl_button {
   cursor: pointer;
+}
+
+.hide_mtl {
+  display: none;
 }
 
 /* credit: DO NOT TOUCH */

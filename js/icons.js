@@ -105,12 +105,12 @@ function five__navigationButtons() {
   const buttons = five__navLinks();
   $("header").prepend(
     `<img class="chibi" src="">`,
-    `<div class="links">`,
-    `<a href="${buttons.home.action}" title="${buttons.home.title}"><i class="${buttons.home.icon}"></i></a>`,
-    `<a href="${buttons.supplemental.action}" title="${buttons.supplemental.title}"><i class="${buttons.supplemental.icon}"></i></a>`,
-    `<a class="${buttons.mtl_button.action}" title="${buttons.mtl_button.title}"><i class="${buttons.mtl_button.icon}"></i></a>`,
-    `<a class="${buttons.lightswitch.action}" title="${buttons.lightswitch.title}"><i class="${buttons.lightswitch.icon}"></i></a>`,
-    `</div>`
+    `<div class="links">
+    <a href="${buttons.home.action}" title="${buttons.home.title}"><i class="${buttons.home.icon}"></i></a>
+    <a href="${buttons.supplemental.action}" title="${buttons.supplemental.title}"><i class="${buttons.supplemental.icon}"></i></a>
+    <a class="${buttons.mtl_button.action}" title="${buttons.mtl_button.title}"><i class="${buttons.mtl_button.icon}"></i></a>
+    <a class="${buttons.lightswitch.action}" title="${buttons.lightswitch.title}"><i class="${buttons.lightswitch.icon}"></i></a>
+    </div>`
   );
 };
 

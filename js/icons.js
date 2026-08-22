@@ -116,32 +116,18 @@ function five__navigationButtons() {
 
 function five__filterOptions(currentPage) {
   const buttons = five__navLinks();
-  let pages = document.createElement('ul');
-  pages.setAttribute('class', 'filter option-set exclusive');
-  pages.setAttribute('data-filter-group', 'gen');
 
-  let li = document.createElement('li');
-  li.setAttribute('class', 'filter option-set exclusive');
-  let a = document.createElement('a');
-  a.setAttribute('data-filter-value', '');
-  a.setAttribute('class', 'reset selected');
-  let txt = document.createTextNode('Reset');
-  a.appendChild(txt);
-  li.appendChild(a);
-  pages.appendChild(li);
-
+  let pages = [
+    `<ul class="filter option-set exclusive" data-filter-group="gen">`,
+    `<li class="filter option-set exclusive"><a data-filter-value="" class="reset selected">Reset</a></li>`
+  ];
   ['era1', 'era2', 'idol', 'other'].forEach((i) => {
     if (i != currentPage) {
-      let link = document.createElement('a');
-      link.setAttribute('href', buttons[i].action);
-      let iText = document.createElement('i');
-      iText.setAttribute('class', buttons[i].icon)
-      let txt2 = document.createTextNode(buttons[i].title);
-      link.appendChild(txt2);
-      link.appendChild(iText);
-      pages.appendChild(link);
+      pages.push(`<a href="${buttons[i].action}">${buttons[i].title} <i class="${buttons[i].icon}"></i></a>`);
     };
   });
+  pages.push(`</ul>`);
+  pages = pages.join('');
 
   let filterType = '';
   if (currentPage == 'idol') {
@@ -158,6 +144,120 @@ function five__filterOptions(currentPage) {
       </ul>
     `;
   };
-  $("div.filters").prepend(pages, filterType);
+
+  let filterEra = '';
+  if (currentPage == 'idol') {
+    filterEra = `
+      <ul class="filter option-set exclusive" data-filter-group="era">
+        <li><b>Era:</b></li>
+        <li><a data-filter-value="" class="selected">All</a></li>
+        <li><a data-filter-value=".one">!</a></li>
+        <li><a data-filter-value=".two">!!</a></li>
+      </ul>
+    `;
+  };
+
+  let filterUnit = '';
+  if (currentPage == 'idol') {
+    filterUnit = `
+      <ul class="filter option-set exclusive" data-filter-group="unit">
+        <li><b>Unit:</b></li>
+        <li><a data-filter-value="" class="selected">All</a></li>
+        <li><a data-filter-value=".fine">fine</a></li>
+        <li><a data-filter-value=".trickstar">Trickstar</a></li>
+        <li><a data-filter-value=".ryuseitai">Ryuseitai</a></li>
+        <li><a data-filter-value=".alkaloid">ALKALOID</a></li>
+        <li><a data-filter-value=".eden">Eden</a></li>
+        <li><a data-filter-value=".valkyrie">Valkyrie</a></li>
+        <li><a data-filter-value=".2wink">2wink</a></li>
+        <li><a data-filter-value=".crazyb">Crazy:B</a></li>
+        <li><a data-filter-value=".undead">UNDEAD</a></li>
+        <li><a data-filter-value=".rabits">Ra*bits</a></li>
+        <li><a data-filter-value=".akatsuki">Akatsuki</a></li>
+        <li><a data-filter-value=".mdu">MELLOW DEAR US</a></li>
+        <li><a data-filter-value=".knights">Knights</a></li>
+        <li><a data-filter-value=".switch">Switch</a></li>
+        <li><a data-filter-value=".mam">MaM</a></li>
+        <li><a data-filter-value=".esupuri">Special for Princess!</a></li>
+        <li><a data-filter-value=".others">Others</a></li>
+      </ul>
+    `;
+  };
+
+  let filterChara = '';
+  if (currentPage == 'idol') {
+    filterChara = `
+      <ul class="filter option-set combine" data-filter-group="chara">
+        <p>
+        <li><b>Character:</b></li>
+        <li><a data-filter-value="" class="selected">All</a></li>
+        </p>
+        <li><a data-filter-value=".eichi"><img src="img/ect/chibi_heads/tenshouin_eichi1.png" width="30"/></a></li>
+        <li><a data-filter-value=".wataru"><img src="img/ect/chibi_heads/hibiki_wataru1.png" width="30"/></a></li>
+        <li><a data-filter-value=".tori"><img src="img/ect/chibi_heads/himemiya_tori1.png" width="30"/></a></li>
+        <li><a data-filter-value=".yuzuru"><img src="img/ect/chibi_heads/fushimi_yuzuru1.png" width="30"/></a></li>
+        <li><a data-filter-value=".hokuto"><img src="img/ect/chibi_heads/hidaka_hokuto1.png" width="30"/></a></li>
+        <li><a data-filter-value=".subaru"><img src="img/ect/chibi_heads/akehoshi_subaru1.png" width="30"/></a></li>
+        <li><a data-filter-value=".makoto"><img src="img/ect/chibi_heads/yuuki_makoto1.png" width="30"/></a></li>
+        <li><a data-filter-value=".mao"><img src="img/ect/chibi_heads/isara_mao1.png" width="30"/></a></li>
+        <li><a data-filter-value=".tetora"><img src="img/ect/chibi_heads/nagumo_tetora2.png" width="30"/></a></li>
+        <li><a data-filter-value=".midori"><img src="img/ect/chibi_heads/takamine_midori1.png" width="30"/></a></li>
+        <li><a data-filter-value=".shinobu"><img src="img/ect/chibi_heads/sengoku_shinobu1.png" width="30"/></a></li>
+        <li><a data-filter-value=".chiaki"><img src="img/ect/chibi_heads/morisawa_chiaki1.png" width="30"/></a></li>
+        <li><a data-filter-value=".kanata"><img src="img/ect/chibi_heads/shinkai_kanata1.png" width="30"/></a></li>
+        <li><a data-filter-value=".hiiro"><img src="img/ect/chibi_heads/amagi_hiiro1.png" width="30"/></a></li>
+        <li><a data-filter-value=".aira"><img src="img/ect/chibi_heads/shiratori_aira1.png" width="30"/></a></li>
+        <li><a data-filter-value=".mayoi"><img src="img/ect/chibi_heads/ayase_mayoi1.png" width="30"/></a></li>
+        <li><a data-filter-value=".tatsumi"><img src="img/ect/chibi_heads/kazehaya_tatsumi1.png" width="30"/></a></li>
+        <li><a data-filter-value=".nagisa"><img src="img/ect/chibi_heads/ran_nagisa1.png" width="30"/></a></li>
+        <li><a data-filter-value=".hiyori"><img src="img/ect/chibi_heads/tomoe_hiyori1.png" width="30"/></a></li>
+        <li><a data-filter-value=".ibara"><img src="img/ect/chibi_heads/saegusa_ibara1.png" width="30"/></a></li>
+        <li><a data-filter-value=".jun"><img src="img/ect/chibi_heads/sazanami_jun1.png" width="30"/></a></li>
+        <li><a data-filter-value=".shu"><img src="img/ect/chibi_heads/itsuki_shu1.png" width="30"/></a></li>
+        <li><a data-filter-value=".mika"><img src="img/ect/chibi_heads/kagehira_mika1.png" width="30"/></a></li>
+        <li><a data-filter-value=".hinata"><img src="img/ect/chibi_heads/aoi_hinata1.png" width="30"/></a></li>
+        <li><a data-filter-value=".yuuta"><img src="img/ect/chibi_heads/aoi_yuuta2.png" width="30"/></a></li>
+        <li><a data-filter-value=".rinne"><img src="img/ect/chibi_heads/amagi_rinne1.png" width="30"/></a></li>
+        <li><a data-filter-value=".himeru"><img src="img/ect/chibi_heads/himeru1.png" width="30"/></a></li>
+        <li><a data-filter-value=".kohaku"><img src="img/ect/chibi_heads/oukawa_kohaku1.png" width="30"/></a></li>
+        <li><a data-filter-value=".niki"><img src="img/ect/chibi_heads/shiina_niki1.png" width="30"/></a></li>
+        <li><a data-filter-value=".rei"><img src="img/ect/chibi_heads/sakuma_rei1.png" width="30"/></a></li>
+        <li><a data-filter-value=".kaoru"><img src="img/ect/chibi_heads/hakaze_kaoru1.png" width="30"/></a></li>
+        <li><a data-filter-value=".koga"><img src="img/ect/chibi_heads/ogami_koga1.png" width="30"/></a></li>
+        <li><a data-filter-value=".adonis"><img src="img/ect/chibi_heads/otogari_adonis1.png" width="30"/></a></li>
+        <li><a data-filter-value=".tomoya"><img src="img/ect/chibi_heads/mashiro_tomoya1.png" width="30"/></a></li>
+        <li><a data-filter-value=".nazuna"><img src="img/ect/chibi_heads/nito_nazuna1.png" width="30"/></a></li>
+        <li><a data-filter-value=".mitsuru"><img src="img/ect/chibi_heads/tenma_mitsuru1.png" width="30"/></a></li>
+        <li><a data-filter-value=".hajime"><img src="img/ect/chibi_heads/shino_hajime1.png" width="30"/></a></li>
+        <li><a data-filter-value=".keito"><img src="img/ect/chibi_heads/hasumi_keito1.png" width="30"/></a></li>
+        <li><a data-filter-value=".kuro"><img src="img/ect/chibi_heads/kiryu_kuro1.png" width="30"/></a></li>
+        <li><a data-filter-value=".souma"><img src="img/ect/chibi_heads/kanzaki_souma1.png" width="30"/></a></li>
+        <li><a data-filter-value=".ibuki"><img src="img/ect/chibi_heads/taki_ibuki1.png" width="30"/></a></li>
+        <li><a data-filter-value=".juis"><img src="img/ect/chibi_heads/kojika_juis1.png" width="30"/></a></li>
+        <li><a data-filter-value=".nozomi"><img src="img/ect/chibi_heads/madoka_nozomi1.png" width="30"/></a></li>
+        <li><a data-filter-value=".mashu"><img src="img/ect/chibi_heads/kuon_mashu1.png" width="30"/></a></li>
+        <li><a data-filter-value=".chitose"><img src="img/ect/chibi_heads/tsuzura_chitose1.png" width="30"/></a></li>
+        <li><a data-filter-value=".tsukasa"><img src="img/ect/chibi_heads/suou_tsukasa1.png" width="30"/></a></li>
+        <li><a data-filter-value=".leo"><img src="img/ect/chibi_heads/tsukinaga_leo1.png" width="30"/></a></li>
+        <li><a data-filter-value=".izumi"><img src="img/ect/chibi_heads/sena_izumi1.png" width="30"/></a></li>
+        <li><a data-filter-value=".ritsu"><img src="img/ect/chibi_heads/sakuma_ritsu1.png" width="30"/></a></li>
+        <li><a data-filter-value=".arashi"><img src="img/ect/chibi_heads/narukami_arashi1.png" width="30"/></a></li>
+        <li><a data-filter-value=".natsume"><img src="img/ect/chibi_heads/sakasaki_natsume1.png" width="30"/></a></li>
+        <li><a data-filter-value=".tsumugi"><img src="img/ect/chibi_heads/aoba_tsumugi2.png" width="30"/></a></li>
+        <li><a data-filter-value=".sora"><img src="img/ect/chibi_heads/harukawa_sora1.png" width="30"/></a></li>
+        <li><a data-filter-value=".madara"><img src="img/ect/chibi_heads/mikejima_madara1.png" width="30"/></a></li>
+        <li><a data-filter-value=".esu"><img src="img/ect/chibi_heads/sagiri_esu1.png" width="30"/></a></li>
+        <li><a data-filter-value=".kanna"><img src="img/ect/chibi_heads/natsu_kanna1.png" width="30"/></a></li>
+        <li><a data-filter-value=".yume"><img src="img/ect/chibi_heads/hanamura_fuyume1.png" width="30"/></a></li>
+        <li><a data-filter-value=".raika"><img src="img/ect/chibi_heads/houjou_raika1.png" width="30"/></a></li>
+        <li><a data-filter-value=".jin"><img src="img/ect/chibi_heads/sagami_jin1.png" width="30"/></a></li>
+        <li><a data-filter-value=".akiomi"><img src="img/ect/chibi_heads/kunugi_akiomi1.png" width="30"/></a></li>
+        <li><a data-filter-value=".nice"><img src="img/ect/chibi_heads/nice1.png" width="30"/></a></li>
+        <li><a data-filter-value=".seiya"><img src="img/ect/chibi_heads/hidaka_seiya1.png" width="30"/></a></li>
+      </ul>
+    `;
+  };
+
+  $("div.filters").prepend(pages, filterType, filterEra, filterUnit, filterChara);
 }
 

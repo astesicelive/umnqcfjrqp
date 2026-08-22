@@ -132,7 +132,7 @@ function five__filterOptions() {
   ['era1', 'era2', 'other'].forEach((i) => {
     let link = document.createElement('a');
     link.setAttribute('href', buttons[i].action);
-    let txt2 = document.createTextNode(`${button[i].title} <i class="${button[i].icon}"></i>`);
+    let txt2 = document.createTextNode(`${buttons[i].title} <i class="${buttons[i].icon}"></i>`);
     link.appendChild(txt2);
     pages.appendChild(link);
   });

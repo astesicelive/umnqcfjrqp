@@ -136,7 +136,8 @@ function five__filterOptions() {
     let iText = document.createElement('i');
     iText.setAttribute('class', buttons[i].icon)
     let txt2 = document.createTextNode(buttons[i].title);
-    link.appendChild(txt2, iText);
+    link.appendChild(txt2,);
+    link.appendChild(iText);
     pages.appendChild(link);
   });
   $("div.filters").prepend(pages);

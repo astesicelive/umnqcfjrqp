@@ -22,22 +22,22 @@ const five__navLinks = () => {
     },
     'era1': {
       icon: 'ph-arrow-fat-right',
-      title: '! Era Stories',
+      title: ' ! Era Stories',
       action: 'yqbawklsln',
     },
     'era2': {
       icon: 'ph-arrow-fat-right',
-      title: '!! Era Stories',
+      title: ' !! Era Stories',
       action: 'zauibutqvo',
     },
     'idol': {
       icon: 'ph-arrow-fat-right',
-      title: 'Idol Stories',
+      title: ' Idol Stories',
       action: 'zyrejpmdyx',
     },
     'other': {
       icon: 'ph-arrow-fat-right',
-      title: 'Other Stories',
+      title: ' Other Stories',
       action: 'twocfgmbty',
     },
   };

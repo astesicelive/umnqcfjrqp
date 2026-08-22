@@ -114,3 +114,19 @@ function five__navigationButtons() {
   );
 };
 
+function five__filterOptions() {
+  const buttons = five__navLinks();
+  let pages = document.createElement('ul');
+  pages.setAttribute('class', 'filter option-set exclusive');
+  pages.setAttribute('data-filter-group', 'gen');
+  pages.appendChild(`<li class="filter option-set exclusive"><a data-filter-value="" class="reset selected">Reset</a></li>`)
+
+  ['era1', 'era2', 'other'].forEach((i) => {
+    let link = document.createElement('a');
+    link.setAttribute('href', buttons[i].action);
+    link.appendChild(`${button[i].title} <i class="${button[i].icon}"></i>`);
+    pages.appendChild(link);
+  });
+  $("div.filters").prepend(pages);
+}
+

@@ -32,14 +32,25 @@ window.addEventListener("DOMContentLoaded", function() {
 window.addEventListener("DOMContentLoaded", function() {
     const btn = document.querySelector(".mtl_button");
     $(".mtl_button i").attr("class","ph-prohibit");
+
+    let obj = {
+        'show': {
+            'text': 'Hide MTLs',
+            'icon': 'ph-prohibit',
+        },
+        'hide': {
+            'text': 'Show MTLs',
+            'icon': 'ph-robot',
+        },
+    };
     
-    const currentMtlDisplay = localStorage.getItem("mtl_display");
-    if (currentMtlDisplay == "hide") {
+    const current = localStorage.getItem("mtl_display");
+    if (current == "hide") {
         $("a.mtl").each(function () {
             $(this).addClass("hide_mtl");
         });
-        $(".mtl_button i").attr("class","ph-robot");
-        $(".mtl_button").attr("title","Show MTLs");
+        $(".mtl_button i").attr("class", obj[current]['text']);
+        $(".mtl_button").attr("title", obj[current]['icon']);
         $(".mtl_button").addClass("mtl_disabled");
     };
 
@@ -49,17 +60,12 @@ window.addEventListener("DOMContentLoaded", function() {
             $(this).toggleClass("hide_mtl");
         });
 
-        let obj = {
-            'show': 'Hide MTLs',
-            'hide': 'Show MTLs',
-        };
         let mtl_display = "show";
-        $(".mtl_button i").attr("class","ph-prohibit");
         if ($(".mtl_button").hasClass("mtl_disabled")) {
             mtl_display = "hide";
-            $(".mtl_button i").attr("class","ph-robot");
         };
         localStorage.setItem("mtl_display", mtl_display);
-        $(".mtl_button").attr("title", obj[mtl_display]);
+        $(".mtl_button i").attr("class",obj[mtl_display]['icon']);
+        $(".mtl_button").attr("title", obj[mtl_display]['text']);
     });
 });

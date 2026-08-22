@@ -128,12 +128,15 @@ function five__filterOptions() {
   let txt = document.createTextNode('Reset');
   a.appendChild(txt);
   li.appendChild(a);
+  pages.appendChild(li);
 
   ['era1', 'era2', 'other'].forEach((i) => {
     let link = document.createElement('a');
     link.setAttribute('href', buttons[i].action);
-    let txt2 = document.createTextNode(`${buttons[i].title} <i class="${buttons[i].icon}"></i>`);
-    link.appendChild(txt2);
+    let i = document.createElement('i');
+    i.setAttribute('class', buttons[i].icon)
+    let txt2 = document.createTextNode(buttons[i].title);
+    link.appendChild(txt2, i);
     pages.appendChild(link);
   });
   $("div.filters").prepend(pages);

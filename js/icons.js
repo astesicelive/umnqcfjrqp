@@ -121,13 +121,13 @@ function five__filterOptions(currentPage) {
     `<ul class="filter option-set exclusive" data-filter-group="gen">`,
     `<li class="filter option-set exclusive"><a data-filter-value="" class="reset selected">Reset</a></li>`
   ];
+  if (/era/.test(currentPage)) {
+    pages.push(
+      `<li class="filter option-set exclusive"><a data-filter-value=".tl">Translated Stories</a></li>`,
+      `<div id="selectStory">　Random Story</div>`
+    );
+  };
   ['era1', 'era2', 'idol', 'other'].forEach((i) => {
-    if (/era/.test(currentPage)) {
-      pages.push(
-        `<li class="filter option-set exclusive"><a data-filter-value=".tl">Translated Stories</a></li>`,
-        `<div id="selectStory">　Random Story</div>`
-      );
-    };
     if (i != currentPage) {
       pages.push(`<a href="${buttons[i].action}">${buttons[i].title} <i class="${buttons[i].icon}"></i></a>`);
     };

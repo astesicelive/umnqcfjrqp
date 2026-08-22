@@ -114,7 +114,7 @@ function five__navigationButtons() {
   );
 };
 
-function five__filterOptions() {
+function five__filterOptions(currentPage) {
   const buttons = five__navLinks();
   let pages = document.createElement('ul');
   pages.setAttribute('class', 'filter option-set exclusive');
@@ -130,16 +130,34 @@ function five__filterOptions() {
   li.appendChild(a);
   pages.appendChild(li);
 
-  ['era1', 'era2', 'other'].forEach((i) => {
-    let link = document.createElement('a');
-    link.setAttribute('href', buttons[i].action);
-    let iText = document.createElement('i');
-    iText.setAttribute('class', buttons[i].icon)
-    let txt2 = document.createTextNode(buttons[i].title);
-    link.appendChild(txt2,);
-    link.appendChild(iText);
-    pages.appendChild(link);
+  ['era1', 'era2', 'idol', 'other'].forEach((i) => {
+    if (i != currentPage) {
+      let link = document.createElement('a');
+      link.setAttribute('href', buttons[i].action);
+      let iText = document.createElement('i');
+      iText.setAttribute('class', buttons[i].icon)
+      let txt2 = document.createTextNode(buttons[i].title);
+      link.appendChild(txt2);
+      link.appendChild(iText);
+      pages.appendChild(link);
+    };
   });
-  $("div.filters").prepend(pages);
+
+  let filterType = '';
+  if (currentPage == 'idol') {
+    filterType = `
+      <ul class="filter option-set exclusive" data-filter-group="type">
+        <li><b>Type:</b></li>
+        <li><a data-filter-value="" class="selected">All</a></li>
+        <li><a data-filter-value=".idol">Idol Story</a></li>
+        <li><a data-filter-value=".fs">Feature Scouts (All)</a></li>
+        <li><a data-filter-value=".fs1">FS1</a></li>
+        <li><a data-filter-value=".fs2">FS2</a></li>
+        <li><a data-filter-value=".fs3">Bright me up!!</a></li>
+        <li><a data-filter-value=".manage">Management Story</a></li>
+      </ul>
+    `;
+  }
+  $("div.filters").prepend(pages, filterType);
 }
 

@@ -119,12 +119,21 @@ function five__filterOptions() {
   let pages = document.createElement('ul');
   pages.setAttribute('class', 'filter option-set exclusive');
   pages.setAttribute('data-filter-group', 'gen');
-  pages.appendChild(`<li class="filter option-set exclusive"><a data-filter-value="" class="reset selected">Reset</a></li>`)
+
+  let li = document.createElement('li');
+  li.setAttribute('class', 'filter option-set exclusive');
+  let a = document.createElement('a');
+  a.setAttribute('data-filter-value', '');
+  a.setAttribute('class', 'reset selected');
+  let txt = document.createTextNode('Reset');
+  a.appendChild(txt);
+  li.appendChild(a);
 
   ['era1', 'era2', 'other'].forEach((i) => {
     let link = document.createElement('a');
     link.setAttribute('href', buttons[i].action);
-    link.appendChild(`${button[i].title} <i class="${button[i].icon}"></i>`);
+    let txt2 = document.createTextNode(`${button[i].title} <i class="${button[i].icon}"></i>`);
+    link.appendChild(txt2);
     pages.appendChild(link);
   });
   $("div.filters").prepend(pages);

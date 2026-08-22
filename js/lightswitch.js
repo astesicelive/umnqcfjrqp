@@ -49,8 +49,8 @@ window.addEventListener("DOMContentLoaded", function() {
         $("a.mtl").each(function () {
             $(this).addClass("hide_mtl");
         });
-        $(".mtl_button i").attr("class", obj[current]['text']);
-        $(".mtl_button").attr("title", obj[current]['icon']);
+        $(".mtl_button i").attr("class", obj[current]['icon']);
+        $(".mtl_button").attr("title", obj[current]['text']);
         $(".mtl_button").addClass("mtl_disabled");
     };
 

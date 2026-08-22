@@ -157,7 +157,7 @@ function five__filterOptions(currentPage) {
         <li><a data-filter-value=".manage">Management Story</a></li>
       </ul>
     `;
-  }
+  };
   $("div.filters").prepend(pages, filterType);
 }
 

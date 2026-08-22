@@ -122,12 +122,78 @@ function five__filterOptions(currentPage) {
     `<li class="filter option-set exclusive"><a data-filter-value="" class="reset selected">Reset</a></li>`
   ];
   ['era1', 'era2', 'idol', 'other'].forEach((i) => {
+    if (/era/.test(currentPage)) {
+      pages.push(
+        `<li class="filter option-set exclusive"><a data-filter-value=".tl">Translated Stories</a></li>`,
+        `<div id="selectStory">　Random Story</div>`
+      );
+    };
     if (i != currentPage) {
       pages.push(`<a href="${buttons[i].action}">${buttons[i].title} <i class="${buttons[i].icon}"></i></a>`);
     };
   });
   pages.push(`</ul>`);
   pages = pages.join('');
+
+  let filterSort = ''
+  if (/era/.test(currentPage)) {
+    filterSort = `
+      <ul class="filter sort-by-button-group" data-filter-group="sorting">
+        <li><b>Sort:</b></li>
+        <li><a data-sort-value="" class="selected">Chronology</a></li>
+        <li><a data-sort-value="chapters" mode="asc">Chapter ↑</a></li>
+        <li><a data-sort-value="chapters" mode="desc">Chapter ↓</a></li>
+        <li><a data-sort-value="release" mode="asc">Release ↑</a></li>
+        <li><a data-sort-value="release" mode="desc">Release ↓</a></li>
+      </ul>
+    `;
+  };
+
+  let filterRead = ''
+  if (/era/.test(currentPage)) {
+    filterRead = `
+      <ul class="filter option-set exclusive" data-filter-group="reading">
+        <li><b>Status:</b></li>
+        <li><a data-filter-value="" class="selected">All</a></li>
+        <li><a data-filter-value=".read">Read</a></li>
+        <li><a data-filter-value=".unread">Unread</a></li>
+      </ul>
+    `;
+  };
+
+  let filterSeason = ''
+  if (currentPage == 'era1') {
+    filterSeason = `
+      <ul class="filter option-set exclusive" data-filter-group="season">
+        <li><b>Season:</b></li>
+        <li><a data-filter-value="" class="selected">All</a></li>
+        <li><a data-filter-value=".past">Past</a></li>
+        <li><a data-filter-value=".spring">Spring</a></li>
+        <li><a data-filter-value=".summer">Summer</a></li>
+        <li><a data-filter-value=".autumn">Autumn</a></li>
+        <li><a data-filter-value=".winter">Winter</a></li>
+        <li><a data-filter-value=".spring2">Next Spring</a></li>
+      </ul>
+    `;
+  };
+
+  let filterYear = ''
+  if (currentPage == 'era1') {
+    filterYear = `
+      <ul class="filter option-set exclusive" data-filter-group="year">
+        <li><b>Release Year:</b></li>
+        <li><a data-filter-value="" class="selected">All</a></li>
+        <li><a data-filter-value=".15">2015</a></li>
+        <li><a data-filter-value=".16">2016</a></li>
+        <li><a data-filter-value=".17">2017</a></li>
+        <li><a data-filter-value=".18">2018</a></li>
+        <li><a data-filter-value=".19">2019</a></li>
+        <li><a data-filter-value=".20">2020</a></li>
+      </ul>
+    `;
+  };
+
+  /* rest of era1 stuff still missing */
 
   let filterType = '';
   if (currentPage == 'idol') {
@@ -258,6 +324,6 @@ function five__filterOptions(currentPage) {
     `;
   };
 
-  $("div.filters").prepend(pages, filterType, filterEra, filterUnit, filterChara);
+  $("div.filters").prepend(pages, filterSort, filterRead, filterSeason, filterYear, filterType, filterEra, filterUnit, filterChara);
 }
 

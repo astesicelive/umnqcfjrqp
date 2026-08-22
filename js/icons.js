@@ -133,10 +133,10 @@ function five__filterOptions() {
   ['era1', 'era2', 'other'].forEach((i) => {
     let link = document.createElement('a');
     link.setAttribute('href', buttons[i].action);
-    let i = document.createElement('i');
-    i.setAttribute('class', buttons[i].icon)
+    let iText = document.createElement('i');
+    iText.setAttribute('class', buttons[i].icon)
     let txt2 = document.createTextNode(buttons[i].title);
-    link.appendChild(txt2, i);
+    link.appendChild(txt2, iText);
     pages.appendChild(link);
   });
   $("div.filters").prepend(pages);
